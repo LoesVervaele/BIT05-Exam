@@ -11,3 +11,4 @@ dentist(*staffNo*,dentistName)
 patient(*patientNo*,patientName)
 app(*staffNo*,patientNo,*Date*,time,surgeryNo)
 
+BCNF : Each determinant is candidate key

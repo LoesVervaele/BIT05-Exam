@@ -1,0 +1,7 @@
+1NF : No repeating groups, all data is present, all attributes depend on primary key 
+
+2NF : No partial dependencies 
+
+3NF : No transitive dependencies 
+
+BCNF : Each determinant is primary key 
