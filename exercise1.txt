@@ -1,3 +1,9 @@
 mkdir Exercises
+cd Exercises/
 git init
-
+git clone https://github.com/LoesVervaele/BIT05-Exam.git
+cd BIT05-Exam/
+nano exercise1.txt
+git add exercise1.txt
+git commit -m "added exercise1.txt"
+git push origin main
