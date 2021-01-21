@@ -1,15 +1,16 @@
 1NF : No repeating groups, all data is present, all attributes depend on primary key 
-medication(*PatientNo*, FullName, WardNo,WardName,BedNo,drugNumber, Name, Description, Dosage, Method, Units, Start, Finish)
+medication(*PatientNo*, FullName, WardNo,WardName,BedNo,*drugNumber*, Name, Description, Dosage, Method, *Units*,Start, Finish)
 
 2NF : No partial dependencies 
-patient(*PatientNo*, FullName)
-medication(*PatientNo*, WardNo,WardName,BedNo,drugNumber, Name, Description, Dosage, Method, Units, Start, Finish)
+patient(*PatientNo*, FullName,WardNo,WardName,BedNo)
+drug(*DrugNumber*, Name, Description, Dosage, Method)
+med(*PatientNo*, *DrugNumber*, * Units*, Start, Finish)
 
 3NF : No transitive dependencies 
-patient(*PatientNo*, FullName,BedNo)
+patient(*PatientNo*, WardNo, FullName,BedNo)
 ward(*WardNo*, *WardName*)
 drug(*drugNumber*, Name, Description, Dosage, Method)
-therapy(*PatientNo*, *drugNumber*, Units, *Start*, Finish)
+therapy(*PatientNo*, *drugNumber*, *Units*, Start, Finish)
 
 
 BCNF : Each determinant is primary key 
