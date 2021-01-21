@@ -1,0 +1,13 @@
+1NF: No repeating groups, all attributes depend on the primary key
+data(staffNo,dentistName,patientNo,patientName,appointment(Date,time),surgeryNo)
+data(*staffNo*,dentistName,patientNo,patientName,*Date*,time,surgeryNo)
+
+2NF : No partial dependencies
+dentist(*staffNo*,dentistName)
+pat_app(*staffNo*,patientNo,patientName,*Date*,time,surgeryNo)
+
+3NF : No transitive dependencies (= non-key attribute is dependent on another non-key attribute) 
+dentist(*staffNo*,dentistName)
+patient(*patientNo*,patientName)
+app(*staffNo*,patientNo,*Date*,time,surgeryNo)
+
